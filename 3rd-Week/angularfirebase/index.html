@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
+<script src="https://cdn.firebase.com/v0/firebase.js"></script>
+<script src="https://cdn.firebase.com/libs/angularfire/0.6.0/angularfire.min.js"></script>
+<script type="text/javascript" src="main.js"></script>
+</head>
+
+
+<body x-ng-app="MyApp" x-ng-controller="MyController">
+	<ul>
+		<li x-ng-repeat="issue in issues">{{issue.title}} <button x-ng-click="remove(issues)">Remove</button></li>
+	</ul>
+
+	<input type="text" x-ng-model="title" />
+	<textarea x-ng-model="body" rows="10" cols="40"></textarea>
+	<input type="button" x-ng-click="addIssue()" value="Click it!" />
+
+</body>
+</html>

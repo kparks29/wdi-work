@@ -1,0 +1,17 @@
+<html>
+<head>
+	<title>Dynamic Arrays</title>
+	<script type="text/javascript" src="script.js"></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div x-ng-app="" x-ng-controller="myCtrl">
+		<input type="text" x-ng-model="sideLength" />
+		<div ng-repeat="cell in cells">{{sideLength}}
+			<div ng-repeat="x in cell">2
+				<div ng-repeat="y in x">3
+			</div>
+		</div>
+	</div>
+</body>
+</html>

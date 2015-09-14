@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Custom directives</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.7/angular.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
+</head>
+<body x-ng-app="RatingTutorial" x-ng-controller="RatingCtrl">
+	rating is {{rating}}<br />
+	<div x-my-rating="" rating-value="rating" max="5"></div>
+	<input type="text" x-ng-model="rating" value="3" /><br />
+</body>
+</html>
+
+
+
+ <!-- on-rating-selected="saveRatingToServer(rating)" -->

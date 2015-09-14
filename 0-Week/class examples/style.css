@@ -1,0 +1,30 @@
+.clearfix {
+	display: inline-block;
+	height: 200px;
+	width: 200px;
+	border 1px solid black;
+	background-image: url('http://placekitten.com/165/165');
+	background-size: cover;
+}
+
+
+img {
+	float: left;
+}
+
+.row {
+	border: 5px solid red;
+}
+.cf:before,
+.cf:after {
+	content: " ";
+	display: table;
+}
+
+.cf:after {
+	clear:both;
+}
+
+.row:first-child {
+	border-bottom: 0px solid red;
+}

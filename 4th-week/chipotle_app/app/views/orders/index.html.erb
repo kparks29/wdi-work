@@ -1,0 +1,23 @@
+<h1>Orders List</h1>
+
+<%= link_to "New Order", new_order_path %>
+<table>
+	<thead>
+		<th>Order Name</th>
+		<th>Protein Choice</th>
+		<th>Bean Choice</th>
+		<th>Salsa Choice</th>
+		<th>Toppings</th>
+	</thead>
+	<tbody>
+		<% @orders.each do |order| %>
+			<tr>
+				<td><%= order.name %></td>
+				<td><%= order.protein %></td>
+				<td><%= order.beans %></td>
+				<td><%= order.salsa %></td>
+				<td><%= order.toppings %></td>
+			</tr>	
+		<% end %>
+	</tbody>
+</table>

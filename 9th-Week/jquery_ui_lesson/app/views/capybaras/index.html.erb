@@ -1,0 +1,31 @@
+Here we will make capybaras do cool things<br />
+<div id="droppable" class="ui-widget-header">
+  <p>Drop here</p>
+</div>
+<% @capybaras.each do |c| %>
+
+	<div id="draggable" class="ui-widget-content"><img src="<%= c.image_url %>"></div>
+<% end %>
+
+
+
+
+<script>
+	$(function() {
+	  $("#draggable").draggable().resizable();
+	  $( "#droppable" ).draggable().droppable({
+      drop: function( event, ui ) {
+        $( this )
+          .addClass( "ui-state-highlight" )
+          .find( "p" )
+            .html( "Dropped!" );
+      },
+      out: function( event, ui ) {
+      	$(this)
+      		.removeClass("ui-state-highlight")
+      		.find( "p")
+      			.html("Drop here");
+      }
+    }).resizable();
+	});
+</script>

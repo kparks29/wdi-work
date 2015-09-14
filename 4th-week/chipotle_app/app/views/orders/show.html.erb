@@ -1,0 +1,12 @@
+<h1>Order</h1>
+
+<%= link_to "All Orders", orders_path %>
+
+	<ul>
+		<li>Order Name: <%= @order.name %></li>
+		<li>Protein Choice: <%= @order.protein %></li>
+		<li>Bean Choice: <%= @order.beans %></li>
+		<li>Salsa Choice: <%= @order.salsa %></li>
+		<li>Toppings: <%= @order.toppings %></li>
+
+	</ul>

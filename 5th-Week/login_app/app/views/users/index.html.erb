@@ -1,0 +1,12 @@
+<h1>List of Users</h1>
+    <ul>
+      <% @users.each do |user| %>
+      <li><%= user.name %></li>
+        <% end %>
+    </ul>
+
+    <%= link_to "New User", new_user_path %>
+    <%= current_user ? current_user.username : "(not logged in)" %>
+
+		<%= button_to "Log out", auth_path, {method: :delete} %>
+    <%= link_to "Login", new_auth_path %>

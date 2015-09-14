@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  location: MyString
+  time: 
+  is_gluten_free: false
+  is_vegan: false
+
+two:
+  location: MyString
+  time: 
+  is_gluten_free: false
+  is_vegan: false

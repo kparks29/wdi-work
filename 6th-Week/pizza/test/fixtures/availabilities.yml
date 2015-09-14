@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  day_of_week: 1
+  start_hour: 1
+  end_hour: 1
+  user_id: 
+
+two:
+  day_of_week: 1
+  start_hour: 1
+  end_hour: 1
+  user_id: 

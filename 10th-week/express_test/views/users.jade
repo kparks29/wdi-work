@@ -1,0 +1,9 @@
+extends layout
+
+block content
+	- each user in users
+		ul
+			li= user.name
+			- if (user.email != nil) {
+				li= user.email
+			- }

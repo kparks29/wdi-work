@@ -1,0 +1,2 @@
+about_me = {:name => "Ken", :lucky_numbers => [2,4,7], :height => "6'3\"", :girlfriend => "Alexa", :siblings => 1, :nephew => {:name => "Gavin", :age => 10}, :age => 26}
+about_me.each {|item| puts "#{item}"}

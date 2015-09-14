@@ -1,0 +1,14 @@
+Welcome to tic tac toe!<br />
+
+<div id="main">
+<% @board.rows.each do |row| %>
+	<div class="row">
+	<% row.cells.each do |cell| %>
+		<div class="cell">
+		<%= cell.val %>
+		</div>
+	<% end %>
+	</div>
+<% end %>
+
+</div>

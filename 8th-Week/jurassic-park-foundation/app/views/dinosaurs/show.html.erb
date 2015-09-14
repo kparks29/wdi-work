@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @dinosaur.name %>
+</p>
+
+<p>
+  <strong>Other name:</strong>
+  <%= @dinosaur.other_name %>
+</p>
+
+<p>
+  <strong>Diet:</strong>
+  <%= @dinosaur.diet %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @dinosaur.description %>
+</p>
+
+<%= link_to 'Edit', edit_dinosaur_path(@dinosaur) %> |
+<%= link_to 'Back', dinosaurs_path %>

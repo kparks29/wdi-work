@@ -1,0 +1,43 @@
+<html>
+<head>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.10/angular.min.js"></script>
+	<title></title>
+	<style>
+		html {
+			-webkit-user-select: none; /* Chrome/Safari */        
+		-moz-user-select: none; /* Firefox */
+		-ms-user-select: none;
+		}
+		.cell {
+			border: 1px solid black;
+			float:left;
+			height: 100px;
+			width: 100px;
+			background-color: yellow;
+			text-align: center;
+			line-height: 100px;
+			font-size: 25px;
+			vertical-align: middle;
+		}
+		.gameboard {
+			height: 310px;
+			width: 310px;
+		}
+
+		.cell:hover {
+			background-color: orange;
+		}
+
+		.cell:active {
+			background-color: red;
+		}
+	</style>
+</head>
+<body x-ng-app="" x-ng-init="cells=[['T','I','C'],['T','A','C'],['T','0','E']]; xturn = {val:true};">
+	<div class="gameboard">
+	<div x-ng-repeat="row in cells track by $index">
+		<div x-ng-repeat="cell in row" class="cell" x-ng-click="cell = (cell == 'X' || cell == 'O' ? cell : ((xturn.val = !xturn.val) ? 'O' : 'X'))">{{cell}}</div>
+	</div>
+</div>
+</body>
+</html>

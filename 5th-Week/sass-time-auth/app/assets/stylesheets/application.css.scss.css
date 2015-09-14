@@ -1,0 +1,15 @@
+$maincolor: #6df;
+$bgimage: url(finn.png);
+
+body {
+	background-image: $bgimage;
+	background-position: 148px;
+	margin: 0px;
+
+	header {
+		background: url(logo.png) no-repeat;
+		background-position: center top;
+		height:198px;
+		background-color: $maincolor;
+	}
+}

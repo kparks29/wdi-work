@@ -1,0 +1,73 @@
+<h1>Build Your Burrito</h1>
+
+<%= form_for @order do |f| %>
+	<div>
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+	</div>
+	
+	<br />
+
+	<div>
+		<strong><u>Choose Your Protein:</u></strong><br />
+		<%= f.radio_button :protein, 'Chicken' %>
+		<%= f.label :protein, "Chicken" %><br />
+		<%= f.radio_button :protein, 'Steak' %>
+		<%= f.label :protein, "Steak" %><br />
+		<%= f.radio_button :protein, 'Barbacoa' %>
+		<%= f.label :protein, "Barbacoa" %><br />
+		<%= f.radio_button :protein, 'Carnitas' %>
+		<%= f.label :protein, "Carnitas" %><br />
+		<%= f.radio_button :protein, 'Fajita Veggies' %>
+		<%= f.label :protein, "Fajita Veggies" %><br />
+	</div>
+
+	<br />
+
+	<div>
+		<strong><u>Choose Your Beans:</u></strong><br />
+		<%= f.radio_button :beans, 'Pinto' %>
+		<%= f.label :beans, "Pinto" %><br />
+		<%= f.radio_button :beans, 'Black' %>
+		<%= f.label :beans, "Black" %><br />
+		<%= f.radio_button :beans, 'None' %>
+		<%= f.label :beans, "None" %><br />
+	</div>
+
+	<br />
+
+	<div>
+		<strong><u>Choose Your Salsa:</u></strong><br />
+		<%= f.radio_button :salsa, 'Fresh Tomato Salsa' %>
+		<%= f.label :salsa, "Fresh Tomato Salsa" %><br />
+		<%= f.radio_button :salsa, 'Roasted Chili-Corn Salsa' %>
+		<%= f.label :salsa, "Roasted Chili-Corn Salsa" %><br />
+		<%= f.radio_button :salsa, 'Tomatillo-Green Chili Salsa' %>
+		<%= f.label :salsa, "Tomatillo-Green Chili Salsa" %><br />
+		<%= f.radio_button :salsa, 'Tomatillo-Red Chili Salsa' %>
+		<%= f.label :salsa, "Tomatillo-Red Chili Salsa" %><br />
+		<%= f.radio_button :salsa, 'None' %>
+		<%= f.label :salsa, "None" %><br />
+	</div>
+
+	<br />
+
+	<div>
+		<strong><u>Choose Your Toppings:</u></strong><br />
+		<%= f.check_box :rice %>
+		<%= f.label :rice, 'Cliantro-Lime Rice' %><br />
+		<%= f.check_box :cheese %>
+		<%= f.label :cheese, 'Cheese' %><br />
+		<%= f.check_box :guac %>
+		<%= f.label :guac, 'Guacamole' %><br />
+		<%= f.check_box :scream %>
+		<%= f.label :scream, 'Sour Cream' %><br />
+		<%= f.check_box :lettuce %>
+		<%= f.label :lettuce, 'Romaine Lettuce' %><br />
+	</div>
+
+	<br />
+
+	<%= f.submit %>
+
+<% end %>

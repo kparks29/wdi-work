@@ -1,0 +1,12 @@
+<div class="createuser">
+	<h1>Create a New User</h1>
+	<%=form_for @user do |f|%>
+		<%=f.text_field :name, :placeholder => "Enter your username"%><br>
+		<%=f.password_field :password, :placeholder => "Enter password" %><br>
+		<%= f.submit "Create New User" %>
+	<% end %>
+</div>
+
+<p>Already Have an Account?</p>
+<%= link_to "Login", new_auth_path %><br />
+<%= link_to "Back to Index", users_path %>

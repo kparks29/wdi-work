@@ -1,0 +1,43 @@
+body {
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.gameBoard {
+	border: 1px solid lime;
+	height: 304px;
+	width: 304px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 25px;
+	line-height: 98px;
+}
+
+.gameBoard div div{
+	border: 1px solid black;
+	height: 98px;
+	width: 98px;
+	float: left;
+}
+
+
+
+/*
+
+
+h1 {
+	margin: 20px 8%;
+	text-align: center;
+}
+
+li {
+	list-style-type: none;
+}
+
+.done-true {
+	text-decoration: line-through;
+}
+*/

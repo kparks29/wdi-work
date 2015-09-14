@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= full_title %></title>
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <!-- Flash Messages -->
+  <p class="notice"><%= notice %></p>
+  <p class="alert"><%= alert %></p>
+
+ 	<%= sign_in_out_links %>
+	<hr />
+	<br />
+	<br />
+
+<%= yield %>
+
+</body>
+</html>

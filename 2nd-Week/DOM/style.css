@@ -1,0 +1,59 @@
+div {
+	height: 40px;
+	width: 475px;
+	margin: 5px;
+	border: 1px solid black;
+	padding: 5px;
+	font-family: Helvetica, sans-serif;
+	color: red;
+	background-color: rgba(0,0,0,0.7);
+	margin-left: 35px;
+	text-align: center;
+}
+
+ul {
+	list-style: none;
+}
+
+li {
+	border: 5px solid black;
+	display: inline-block;
+	margin-top: 5px;
+	width: 150px;
+	height: 150px;
+	background-position: center top;
+	background-size: cover;
+	border-radius: 10px;
+}
+
+
+
+li span {
+	display: block;
+	background-color: rgba(0,0,0,0.4);
+	font-size: 20px;
+	color: white;
+
+}
+
+li span.name {
+	text-align: left;
+}
+
+li span.health {
+	text-align: right;
+}
+
+.human {
+	background-image: url('http://placekitten.com/150/140');
+}
+.elf{
+	background-image: url('http://placekitten.com/140/150');
+} 
+.ent{
+	background-image: url('http://placekitten.com/150/150');	
+}
+
+.human:active, .elf:active, .ent:active {
+	opacity: 0.6;
+}

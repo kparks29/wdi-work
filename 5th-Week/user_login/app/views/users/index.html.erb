@@ -1,0 +1,43 @@
+<h1>Listing users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.name %></td>
+        <td><%= user.email %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+  <%= current_user ? current_user.username : "(not logged in)" %> </h1>
+
+  <%= button_to "Log out", auths_path, method: :delete %>
+
+ <div class="login">
+    <h1>Log In</h1>
+    <%= form_for @user, {url:"/auths", method:"post"} do |u|%>
+    <%= u.text_field :name, :placeholder => "Your username" %><br>
+    <%= u.password_field :password, :placeholder => "Your password" %><br>
+    <%= u.submit "Log In" %>
+    <%end%>
+  </div>
+
+  <div class="createuser">
+    <h1>Create a New User</h1>
+    <%=form_for @user do |f|%>
+      <%=f.text_field :name, :placeholder => "Enter your username"%><br>
+      <%=f.password_field :password, :placeholder => "Enter password" %><br>
+      <%= f.submit "Create New User" %>
+    <% end %>
+  </div>

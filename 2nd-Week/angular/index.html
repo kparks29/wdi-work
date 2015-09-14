@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html x-ng-app="">
+<head>
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+	<title>AngularJS Basics</title>
+	<script src="js/lib/angular.min.js"></script>
+	<script type="text/javascript" src="js/script.js"></script>
+</head>
+<body>
+
+	<div class="gameBoard" x-ng-controller="myController" >
+		<div x-ng-repeat="i in ar">
+			<div x-ng-repeat="j in ar" id="cell{{ar[i]}}-{{ar[j]}}" x-ng-click="toggler(i,j);"></div>
+		</div>
+	</div>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="item active">
+      <%= image_tag("divers_in_pool.jpg",alt: "Divers in Pool") %>
+      <div class="carousel-caption">
+        <h1>Learn How to Dive</h1>
+      </div>
+    </div>
+   	<div class="item">
+      <%= image_tag("diver_and_coach.jpg",alt: "Diver and Instructor") %>
+      <div class="carousel-caption">
+        <h1>Professional Instructors</h1>
+      </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+
+<h1>Plan the scuba trip of your dreams!</h1>
+
+<p>I bet some images and ipsum text would look awesome here.</p>
+
+
+ <script type='text/javascript'>
+
+    $(document).ready(function() {
+      $('.carousel').carousel({
+			interval: 3000
+			})
+  	});
+
+ </script>

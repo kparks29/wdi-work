@@ -1,0 +1,23 @@
+<h1>Movie Search</h1>
+
+<%= form_tag pages_path, :method => 'get' do %>
+    <%= text_field_tag :movie, params[:movie] %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>
+<br>
+Not sure which movie you want? Try <%= link_to "Cars" , pages_path(movie: "cars") %>
+
+<hr>
+
+<br>
+<h2><%=@movie['title']%></h2>
+
+<br />
+<%= image_tag @movie['posters']['profile']%>
+
+<br />
+<ul>
+<% @movie.each do | key, value | %>
+	<li><strong><%= key %></strong> : <%= value %></li>
+<% end %>
+</ul>

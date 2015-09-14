@@ -1,0 +1,15 @@
+ex46+ on Ruby the hard way - didn't want to mess with adding new directories
+.reduce (what does this do?)
+sub and gsub (howto use these?)(ex. remove hashtag)
+what is the difference between .map and .each
+have a few questions on my snake.js project that i did over the break
+
+
+ask justin how to multi edit things on sublime
+how to change my user name on my computer?
+ask ira, about bitcoin
+
+
+
+Javascript
+	how to run a background timer

@@ -1,0 +1,75 @@
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCdqUcI17U4mNyHBNvlgGq-FK8KWApFoQQ&sensor=true"></script>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6">
+      <h1>All of the breakfast spots</h1>
+
+      <table class="table-striped">
+        <thead>
+          <tr>
+            <th>Address</th>
+            <th>Description</th>
+            <th>Title</th>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @spots.each do |spot| %>
+            <tr>
+              <td><%= spot.address %></td>
+              <td><%= spot.description %></td>
+              <td><%= spot.title %></td>
+              <td><%= link_to 'Show', spot %><br>
+              <%= link_to 'Edit', edit_spot_path(spot) %><br>
+              <%= link_to 'Destroy', spot, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+
+      <br>
+
+      <%= link_to 'Add A New Spot', new_spot_path %>
+    </div>
+    <div class="col-md-6">
+      <div id="map-canvas"></div>
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+  function initialize() {
+    var myLatLng = new google.maps.LatLng(<%= @spots.first.latitude %>, <%= @spots.first.longitude %>);
+    var mapOptions = {
+      center: myLatLng,
+      zoom: 15
+    };
+    var map = new google.maps.Map(document.getElementById("map-canvas"),
+        mapOptions);
+    var marker = new google.maps.Marker({
+      position: myLatLng,
+      map: map,
+      animation: google.maps.Animation.DROP,
+      title: "GA"
+    });
+    // var contentString = '<div id="content">'+
+    //   '<h1 id="firstHeading" class="firstHeading"><%= @spots.first.title %></h1>'+
+    //   '<div id="bodyContent">'+
+    //   '<p><%= @spots.first.description %></p>'+
+    //   '</div>'+
+    //   '</div>';
+    // var infowindow = new google.maps.InfoWindow({
+    //   content: contentString,
+    //   maxWidth: 200
+    // });
+  }
+  google.maps.event.addDomListener(window, 'page:change', initialize);
+  // google.maps.event.addListener(marker, 'click', function() {
+  //   infowindow.open(map,marker);
+  // });
+</script>

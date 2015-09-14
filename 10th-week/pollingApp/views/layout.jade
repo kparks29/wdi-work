@@ -1,0 +1,19 @@
+doctype html
+html(x-ng-app='polls')
+	head
+		title= title
+		link(rel='stylesheet', href='//netdna.bootstrapcdn.com/bootstrap/3.0.1/css/bootstrap.min.css')
+		link(rel='stylesheet', href='/stylesheets/style.css')
+		script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.min.js')
+		script(src='//ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular-resource.min.js')
+		script(src='/socket.io/socket.io.js')
+		script(src='/javascripts/app.js')
+		script(src='/javascripts/controllers.js')
+		script(src='/javascripts/services.js')
+	body(x-ng-controller='PollListCtrl')
+		nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+			div.navbar-header
+				a.navbar-brand(href='#/polls')= title
+		div.container
+			div(x-ng-view)
+				block content

@@ -1,0 +1,39 @@
+<h1>My Shopping List</h1>
+
+<table>
+<!--   <thead>
+    <tr>
+      <th>Name</th>
+      <th>(Quantity)</th>
+      <th>Completed?</th>
+      <th>Actions</th>
+
+    </tr>
+  </thead> -->
+
+  	<ul class='list'>
+    	<% @items.each do |item| %>
+      	<li>
+        <%= item.name %>
+        (<%= item.quantity %>)
+        <%= item.is_completed %>
+        <span class="links">
+        	<%= link_to 'Edit', edit_item_path(item) %>
+        	<%= link_to 'Delete', item, method: :delete, data: { confirm: 'Are you sure?' } %>
+      	</span>
+    <% end %>
+</table>
+
+<br>
+
+<%= link_to 'New Item', new_item_path, class: "button" %>
+<br />
+<br />
+<h2><%= if @stuff_is_true then "Stuff is true!" end %></h2>
+
+To see all Results: <%= link_to 'Show All', items_path(show_all: 'true') %>
+<br />
+Show Only Completed? <%= link_to 'Show', items_path(show_all: 'completed') %>
+<br />
+Hide Completed? <%= link_to 'Hide', items_path(show_all: 'false') %>
+

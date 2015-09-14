@@ -1,0 +1,18 @@
+lines{"N" => ["Times square", "34th", "28th"], "L" => [], "6" => []}
+
+puts ""
+line_start = gets.chomp
+puts ""
+location_start = gets.chomp
+
+puts ""
+line_end = gets.chomp
+puts ""
+location_end = gets.chomp
+
+#using the key line, we are searching through each stop on that line to see if it matches the user's input
+if lines[line_start].each {|location| location == location_start}  
+	
+end
+
+if statement for intersections

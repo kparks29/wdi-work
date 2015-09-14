@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html ng-app>
+<head>
+  <title>QApp</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.8/angular.min.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+  <!-- <link rel="stylesheet" type="text/css" href="css/normalize.css"> -->
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+</head>
+
+<body ng-controller="QappCtrl">
+<div id="main">
+  <div id="header">
+    <h1>QApp</h1>
+    <h2>a general assembly <span>Class 3</span> production</h2>
+  </div>
+  
+  <div id="current">
+  <div id="inner">
+    <div id="box"><h3>CURRENT<br>TOPIC</h3></div>
+    <span>{{items[0].topic}}</span>
+  </div>
+  </div>
+
+  <div id="left">
+    <form ng-submit="addItem()">
+      <div>
+        <h2>Name</h2><input ng-model="newItemName" type="text" placeholder=" eg: Derek Zoolander">
+      </div>
+      <div>
+        <h2>Topic</h2><input ng-model="newItemTopic" type="text" placeholder=" eg: Modeling for abo-digitals">
+      </div>
+      <div>
+        <h2>Time</h2><input id="minutes" ng-model="newItemTime" type="text" placeholder=" ?"> minutes
+      </div>
+      <input type="submit" value="SUBMIT">
+      <span>{{errorMessage}}</span>
+    </form>
+  </div>
+  
+  <div id="right">
+
+    <table cellspacing="0">
+    <tr>
+      <th ng-click="predicate = 'items.indexOf(item)'; reverse = false; arrow = false; counter = 0">
+        <span>#&nbsp
+          <i class="fa fa-angle-down"></i>
+        </span>
+      </th>
+      <th>Name</th>
+      <th>Topic</th>
+      <th ng-click="predicate = '-time'; reverse = !reverse; arrow = !arrow; counter = counter + 1">
+        <span>Duration&nbsp&nbsp
+          <i ng-class="{'fa': true, 'fa-sort': counter == 0, 'fa-caret-down': arrow && counter > 0, 'fa-sort-desc': !arrow && counter > 0}"></i>
+        </span>
+      </th>
+      <th>Est. Start Time</th>
+      <th>Done?</th>
+    </tr>
+
+    <tr ng-repeat="item in items | orderBy: predicate: reverse">
+      <td class="centered">{{items.indexOf(item) + 1}}</td>
+      <td>{{item.name}}</td>
+      <td>{{item.topic}}</td>
+      <td class="centered">{{item.time}} minutes</td>
+      <td class="centered">{{item.estimated}}</td>
+      <td class="centered"><i ng-click="removeItem(item)" class="fa fa-times"></i></td>
+    </tr>
+    </table>
+  
+  </div>
+
+</div>
+</body>
+</html>

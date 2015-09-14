@@ -1,0 +1,39 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6 profile">
+    <p id="notice"><%= notice %></p>
+
+    <p class="lead">
+      <strong>Latitude:</strong>
+      <%= @spot.latitude %>
+    </p>
+
+    <p class="lead">
+      <strong>Longitude:</strong>
+      <%= @spot.longitude %>
+    </p>
+
+    <p class="lead">
+      <strong>Address:</strong>
+      <%= @spot.address %>
+    </p>
+
+    <p class="lead">
+      <strong>Description:</strong>
+      <%= @spot.description %>
+    </p>
+
+    <p class="lead">
+      <strong>Title:</strong>
+      <%= @spot.title %>
+    </p>
+
+    <p class="lead">
+    <%= link_to 'Edit', edit_spot_path(@spot) %> |
+    <%= link_to 'Back', spots_path %>
+    </p>
+    </div>
+    <div class="col-md-3"></div>
+  </div>
+</div>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+  <head>
+    <script src='https://cdn.firebase.com/v0/firebase.js'></script>
+    <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js'></script>
+    <script>
+      
+      function mainCtrl($scope) {
+        $scope.myDataRef = new Firebase('https://ujgsveqca75.firebaseio-demo.com/');
+        $scope.clickHandler = function() 
+        {  
+          var name = $scope.nameInput;
+          var text = $scope.messageInput;
+          $scope.myDataRef.push({name:name, text:text});
+          $scope.messageInput = "";
+        }
+        $scope.displayChatMessage = function(name, text) 
+        {
+          $scope.messagesDiv += "<br />" +name + ": " + text;
+        }
+        $scope.myDataRef.on('child_added', function(snapshot) 
+        {
+          var message = snapshot.val();
+          $scope.displayChatMessage(message.name, message.text);
+        });
+            
+      }  
+
+        
+
+    </script>
+  </head>
+  <body x-ng-app="" x-ng-controller="mainCtrl">
+    <div>{{messagesDiv}}</div>
+    <input type='text' x-ng-model='nameInput' placeholder='Name'>
+    <input type='text' x-ng-model='messageInput' placeholder='Message'>
+    <button x-ng-click="clickHandler()">Submit</button>
+    
+  </body>
+</html>
